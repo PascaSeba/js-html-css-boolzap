@@ -80,6 +80,11 @@ i {
     cursor: pointer;
 }
 
+i:hover {
+    color: #569996;
+    font-size: 1.1em;
+}
+
 .main_nav ul li {
     padding-top: 9px;
 }
@@ -174,10 +179,32 @@ i {
 .contacts>div {
     padding: 5px;
     display: flex;
+    cursor: pointer;
 }
 
 .contacts>div p {
     margin-left: 5px;
+}
+
+.contacts>div:hover {
+    background-color: #e9ebeb;
+    font-size: 1.3em;
+    align-items: center;
+    font-weight: bold;
+}
+
+.contacts>div:hover img,
+.contacts>div:focus img {
+    width: 64px;
+    height: 64px;
+}
+
+.contacts>div:focus {
+    background-color: #dadada;
+    outline: none;
+    font-size: 1.3em;
+    align-items: center;
+    font-weight: bold;
 }
 
 
@@ -209,6 +236,16 @@ main {
     height: 45px;
 }
 
+.main_header img:hover {
+    width: 52px;
+    height: 52px;
+}
+
+.side_header img:hover {
+    width: 56px;
+    height: 56px;
+}
+
 .user_chatting {
     display: flex;
     flex-wrap: wrap;
@@ -227,7 +264,7 @@ main {
 
 main .main_body {
     min-width: 100%;
-    height: 81%;
+    height: 82%;
     display: flex;
     padding-left: 40%;
     padding-right: 2.5%;
@@ -302,4 +339,10 @@ footer {
 
 .footer_container i {
     font-size: 1.33em;
+    color: #6b7376;
+}
+
+.footer_container i:hover {
+    color: #72abc5;
+    font-size: 1.7em;
 }
