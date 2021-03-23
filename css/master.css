@@ -20,22 +20,31 @@ body {
     width: 80%;
     height: 95%;
     display: flex;
+    background-image: url(../img/mine.jpg);
     box-shadow: 5px 5px 5px #009688;
 }
+
+
+/* INIZIO DELLA SIDEBAR */
 
 .sidebar {
     min-height: 95%;
     min-width: 30%;
     position: absolute;
     left: 10%;
+    display: flex;
+    flex-direction: column;
 }
+
+
+/* Header della sidebar */
 
 .sidebar .side_header {
     height: 8vh;
     min-width: 100%;
     background-color: #eaeaea;
     border-right: 1px solid #d1d0d0;
-    border-bottom: 1px solid #cecece;
+    border-bottom: 1px solid #dddcdc;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -47,46 +56,250 @@ body {
     align-items: center;
 }
 
-.side_header img {
-    width: 8%;
+.side_header img,
+.side_body img,
+.user_chatting img {
     border-radius: 50%;
     width: 50px;
     height: 50px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
-.side_nav ul li {
+.side_nav ul li,
+.main_nav ul li {
     list-style-type: none;
     display: inline-block;
     padding: 5px;
     color: #6ecac6;
     font-size: 1.2em;
+    cursor: pointer;
 }
+
+i {
+    cursor: pointer;
+}
+
+.main_nav ul li {
+    padding-top: 9px;
+}
+
+
+/* Body della sidebar */
 
 .side_body {
     min-width: 100%;
     height: 87vh;
     background-color: whitesmoke;
     display: flex;
+    flex-direction: column;
+    z-index: 999;
 }
+
+
+/* Sezione notifiche del body della sidebar */
+
+.notifications {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #8edafc;
+}
+
+.notifications i {
+    font-size: 1.5em;
+    color: #8edafc;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.notifications .notify_act {
+    margin-left: 10px;
+}
+
+
+/* Sezione search del body della sidebar */
+
+.search {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.search input {
+    width: 85%;
+    outline: none;
+    border: none;
+    font-size: 0.9em;
+    border-left: 0.5px solid rgb(241, 240, 240);
+}
+
+.search i,
+.search input {
+    background-color: white;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.search i {
+    padding-left: 25px;
+    padding-right: 20px;
+    color: grey;
+}
+
+
+/* Sezione contatti del body della sidebar */
+
+.contacts {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-left: 5px;
+    overflow-y: scroll;
+}
+
+.contacts>div:not(:nth-child(4)) {
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.contacts>div {
+    padding: 5px;
+    display: flex;
+}
+
+.contacts>div p {
+    margin-left: 5px;
+}
+
+
+/* FINE DELLA SIDEBAR */
+
+
+/* INIZIO DEL MAIN */
 
 main {
     min-width: 100%;
     display: flex;
 }
 
-main .main_body {
-    background-image: url(../img/mine.jpg);
-    min-width: 100%;
-    height: 100%;
-    display: flex;
-    overflow-y: scroll;
-}
-
 .main_header {
+    display: flex;
+    padding: 8px;
+    justify-content: space-between;
     min-width: 50%;
     height: 8vh;
     background-color: #eaeaea;
     position: absolute;
     right: 10%;
+    border-left: 1px solid #d8d8d8;
+    padding-right: 15px;
+}
+
+.main_header img {
+    width: 45px;
+    height: 45px;
+}
+
+.user_chatting {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user_chatting p:nth-child(3) {
+    color: rgb(150, 150, 150);
+    padding-top: 1px;
+    font-size: 0.7em;
+}
+
+
+/* Inizio del body del main: la chat */
+
+main .main_body {
+    min-width: 100%;
+    height: 81%;
+    display: flex;
+    padding-left: 40%;
+    padding-right: 2.5%;
+    margin-top: 8vh;
+    padding-top: 1vh;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.main_body .chat {
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+}
+
+.main_body .chat .you {
+    background-color: lawngreen;
+    align-self: flex-end;
+}
+
+.main_body .chat .friend {
+    background-color: darkgreen;
+    color: white;
+    align-self: flex-start;
+}
+
+.main_body .chat .friend,
+.main_body .chat .you {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 15px;
+    width: 49%;
+}
+
+.chat p span {
+    color: #009688;
+    align-self: flex-end;
+    margin-top: 3px;
+    font-size: 0.7em;
+}
+
+footer {
+    background-color: #eaeaea;
+    width: 50%;
+    height: 9vh;
+    position: absolute;
+    bottom: 2.6%;
+    right: 10%;
+}
+
+.footer_container {
+    display: flex;
+    width: 100%;
+    padding: 11px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer_container input {
+    width: 85%;
+    height: 45px;
+    outline: none;
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    padding-left: 10px;
+}
+
+.footer_container i {
+    font-size: 1.33em;
 }
