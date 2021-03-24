@@ -101,8 +101,8 @@ var app = new Vue({
         addMessage() {
             if (this.myMessage != "") {
                 var message = {
-                    date: this.getNowDate(),
-                    text: this.msgInput,
+                    date: "prova",
+                    text: this.myMessage,
                     status: 'sent'
                 }
                 this.contacts[this.selectedContact].messages.push(message);
