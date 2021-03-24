@@ -70,8 +70,8 @@
         <main>
             <section class="main_header ">
                 <div class="user_chatting ">
-                    <img src="img\avatar_1.jpg " alt=" ">
-                    <p>Michele</p>
+                    <img :src="'img/avatar' + contacts[selectedContact].avatar + '.jpg'" alt=" ">
+                    <p>{{contacts[selectedContact].name}}</p>
                     <p>Ultimo accesso oggi alle</p>
                 </div>
 

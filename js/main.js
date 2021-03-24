@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#root',
     data: {
-        counter: 0,
+        selectedContact: 0,
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',
@@ -85,7 +85,7 @@ var app = new Vue({
     },
     methods: {
         clickContact(index) {
-
+            this.selectedContact = index;
         }
     }
 });
