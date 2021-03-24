@@ -21,7 +21,7 @@ var app = new Vue({
                         date: '10/01/2020 16:15:22',
                         text: 'No madre, lo ucciderò. Così è deciso.',
                         status: 'received'
-                    }
+                    },
                 ],
             },
             {
@@ -68,7 +68,7 @@ var app = new Vue({
                         date: '28/03/2020 16:15:22',
                         text: 'Ah scusa!',
                         status: 'received'
-                    }
+                    },
                 ],
             },
             {
@@ -89,10 +89,15 @@ var app = new Vue({
                         date: '10/01/2020 15:52:00',
                         text: 'Okay scusa se esisto',
                         status: 'sent'
-                    }
+                    },
                 ],
             },
         ]
+    },
+    created: function() {
+        setTimeout(() => {
+            this.CPUreply();
+        }, 1000)
     },
     methods: {
         clickContact(index) {
@@ -100,14 +105,23 @@ var app = new Vue({
         },
         addMessage() {
             if (this.myMessage != "") {
-                var message = {
+                var mex = {
                     date: "prova",
                     text: this.myMessage,
                     status: 'sent'
-                }
-                this.contacts[this.selectedContact].messages.push(message);
+                };
+                this.contacts[this.selectedContact].messages.push(mex);
                 this.myMessage = ("");
             }
+        },
+        CPUreply() {
+            this.contacts[this.selectedContact].messages.push(CPUmex);
+
+            var CPUmex = {
+                date: "prova",
+                text: 'Ok',
+                status: 'received',
+            };
         }
     }
 });

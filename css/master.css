@@ -210,14 +210,6 @@ i:hover {
     font-weight: bold;
 }
 
-.salve {
-    background-color: #dadada;
-    outline: none;
-    font-size: 1.3em;
-    align-items: center;
-    font-weight: bold;
-}
-
 
 /* FINE DELLA SIDEBAR */
 
@@ -312,6 +304,7 @@ main .main_body {
     padding: 15px;
     border-radius: 15px;
     width: 49%;
+    margin-bottom: 5px;
 }
 
 .chat p span {
