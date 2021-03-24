@@ -2,6 +2,7 @@ var app = new Vue({
     el: '#root',
     data: {
         selectedContact: 0,
+        myMessage: (""),
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',
@@ -41,7 +42,12 @@ var app = new Vue({
                         date: '20/03/2020 16:35:00',
                         text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                         status: 'sent'
-                    }
+                    },
+                    {
+                        date: '20/03/2020 16:30:55',
+                        text: 'Beh... Se preferisci il cibo a me allora fuck, non ti chiederò mai più di uscire. Cordiali saluti.',
+                        status: 'received'
+                    },
                 ],
             },
             {
@@ -78,6 +84,11 @@ var app = new Vue({
                         date: '10/01/2020 15:50:00',
                         text: 'Si, ma preferirei andare al cinema',
                         status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 15:52:00',
+                        text: 'Okay scusa se esisto',
+                        status: 'sent'
                     }
                 ],
             },
@@ -86,9 +97,18 @@ var app = new Vue({
     methods: {
         clickContact(index) {
             this.selectedContact = index;
+        },
+        addMessage() {
+            if (this.myMessage != "") {
+                var message = {
+                    date: this.getNowDate(),
+                    text: this.msgInput,
+                    status: 'sent'
+                }
+                this.contacts[this.selectedContact].messages.push(message);
+                this.myMessage = ("");
+            }
         }
     }
 });
 Vue.config.devtools = true;
-
-//Applicare classe alla chat con vbind
