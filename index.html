@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div id="root" class="container">
 
         <!-- INIZIO DELLA SIDEBAR -->
 
@@ -53,18 +53,12 @@
 
                 <!-- (Sezione contacts - sidebar) -->
                 <div class="contacts">
-                    <div tabindex="1"><img src="img\avatar_1.jpg" alt="">
-                        <p>Michele</p>
-                    </div>
-                    <div tabindex="1"><img src="img\avatar_2.jpg" alt="">
-                        <p>Fabio</p>
-                    </div>
-                    <div tabindex="1"><img src="img\avatar_3.jpg" alt="">
-                        <p>Samuele</p>
-                    </div>
-                    <div tabindex="1"><img src="img\avatar_4.jpg" alt="">
-                        <p>Luisa/o</p>
-                    </div>
+                    <ul>
+                        <li tabindex="1" @click="clickContact(index)" v-for="(contact, index) in contacts">
+                            <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=" ">
+                            <p>{{contact.name}}</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -75,36 +69,36 @@
 
         <main>
             <section class="main_header ">
-                <div class="user_chatting">
-                    <img src="img\avatar_1.jpg" alt="">
+                <div class="user_chatting ">
+                    <img src="img\avatar_1.jpg " alt=" ">
                     <p>Michele</p>
                     <p>Ultimo accesso oggi alle</p>
                 </div>
 
-                <div class="main_nav">
+                <div class="main_nav ">
                     <ul>
-                        <li><i class="fas fa-search"></i></li>
-                        <li><i class="fas fa-paperclip"></i></li>
-                        <li><i class="fas fa-ellipsis-v"></i></li>
+                        <li><i class="fas fa-search "></i></li>
+                        <li><i class="fas fa-paperclip "></i></li>
+                        <li><i class="fas fa-ellipsis-v "></i></li>
                     </ul>
                 </div>
             </section>
 
             <section class="main_body ">
-                <div class="chat">
-                    <p class="you">Hai portato a spasso il cane? <span><strong>10/12/23 </strong> - 21:34</span></p>
-                    <p class="you">Ricordati di dargli da mangiare<span><strong>10/12/23 </strong> - 21:34</span></p>
-                    <p class="friend">No madre, lo ucciderò. Così è deciso. <span><strong>10/12/23 </strong> - 21:47</span></p>
+                <div class="chat ">
+                    <p class="you ">Hai portato a spasso il cane? <span><strong>10/12/23 </strong> - 21:34</span></p>
+                    <p class="you ">Ricordati di dargli da mangiare<span><strong>10/12/23 </strong> - 21:34</span></p>
+                    <p class="friend ">No madre, lo ucciderò. Così è deciso. <span><strong>10/12/23 </strong> - 21:47</span></p>
                 </div>
             </section>
 
         </main>
 
         <footer>
-            <div class="footer_container">
-                <i class="far fa-smile"></i>
-                <input type="text" placeholder="Scrivi un messaggio...">
-                <i class="fas fa-microphone"></i>
+            <div class="footer_container ">
+                <i class="far fa-smile "></i>
+                <input type="text " placeholder="Scrivi un messaggio... ">
+                <i class="fas fa-microphone "></i>
             </div>
         </footer>
     </div>

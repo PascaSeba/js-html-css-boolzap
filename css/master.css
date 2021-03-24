@@ -21,7 +21,7 @@ body {
     height: 95%;
     display: flex;
     background-image: url(../img/mine.jpg);
-    box-shadow: 5px 5px 5px #009688;
+    box-shadow: 5px 5px 5px 5px #009688;
 }
 
 
@@ -29,7 +29,7 @@ body {
 
 .sidebar {
     min-height: 95%;
-    min-width: 30%;
+    width: 30%;
     position: absolute;
     left: 10%;
     display: flex;
@@ -165,6 +165,7 @@ i:hover {
 
 .contacts {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -172,34 +173,36 @@ i:hover {
     overflow-y: scroll;
 }
 
-.contacts>div:not(:nth-child(4)) {
+.contacts li:not(:nth-child(4)) {
     border-bottom: 1px solid rgb(223, 223, 223);
 }
 
-.contacts>div {
+.contacts li {
     padding: 5px;
-    display: flex;
+    display: inline-flex;
     cursor: pointer;
+    list-style-type: none;
+    width: 100%;
 }
 
-.contacts>div p {
+.contacts li p {
     margin-left: 5px;
 }
 
-.contacts>div:hover {
+.contacts li:hover {
     background-color: #e9ebeb;
     font-size: 1.3em;
     align-items: center;
     font-weight: bold;
 }
 
-.contacts>div:hover img,
-.contacts>div:focus img {
+.contacts li:hover img,
+.contacts li:focus img {
     width: 64px;
     height: 64px;
 }
 
-.contacts>div:focus {
+.contacts li:focus {
     background-color: #dadada;
     outline: none;
     font-size: 1.3em;
