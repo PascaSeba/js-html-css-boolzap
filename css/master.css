@@ -285,19 +285,19 @@ main .main_body {
     width: 100%;
 }
 
-.main_body .chat .you {
+.chat .you {
     background-color: lawngreen;
     align-self: flex-end;
 }
 
-.main_body .chat .friend {
+.chat .friend {
     background-color: darkgreen;
     color: white;
     align-self: flex-start;
 }
 
-.main_body .chat .friend,
-.main_body .chat .you {
+.friend,
+.you {
     margin-top: 5px;
     display: flex;
     flex-direction: column;

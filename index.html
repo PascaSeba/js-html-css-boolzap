@@ -85,10 +85,8 @@
             </section>
 
             <section class="main_body ">
-                <div class="chat ">
-                    <p class="you ">Hai portato a spasso il cane? <span><strong>10/12/23 </strong> - 21:34</span></p>
-                    <p class="you ">Ricordati di dargli da mangiare<span><strong>10/12/23 </strong> - 21:34</span></p>
-                    <p class="friend ">No madre, lo ucciderò. Così è deciso. <span><strong>10/12/23 </strong> - 21:47</span></p>
+                <div class="chat">
+                    <p v-for="message in contacts[selectedContact].messages" :class="(message.status == 'sent') ? 'you' : 'friend'">{{message.text}} <span>{{message.date}}</span></p>
                 </div>
             </section>
 
