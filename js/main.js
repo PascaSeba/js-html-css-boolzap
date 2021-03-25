@@ -95,9 +95,7 @@ var app = new Vue({
         ]
     },
     created: function() {
-        setTimeout(() => {
-            this.CPUreply();
-        }, 1000)
+
     },
     methods: {
         clickContact(index) {
@@ -112,16 +110,21 @@ var app = new Vue({
                 };
                 this.contacts[this.selectedContact].messages.push(mex);
                 this.myMessage = ("");
+                this.rispostaSimulata();
             }
         },
+        rispostaSimulata() {
+            setTimeout(() => {
+                this.CPUreply();
+            }, 1000)
+        },
         CPUreply() {
-            this.contacts[this.selectedContact].messages.push(CPUmex);
-
             var CPUmex = {
                 date: "prova",
                 text: 'Ok',
                 status: 'received',
             };
+            this.contacts[this.selectedContact].messages.push(CPUmex);
         }
     }
 });
