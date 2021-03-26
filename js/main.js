@@ -3,6 +3,7 @@ var app = new Vue({
     data: {
         selectedContact: 0,
         myMessage: (""),
+        search: (""),
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',
@@ -98,6 +99,15 @@ var app = new Vue({
 
     },
     methods: {
+        findContact(search) {
+            this.contacts.forEach((contact) => {
+                if (!contact.name.toLowerCase().includes(search.toLowerCase())) {
+                    contact.visible = false;
+                } else {
+                    contact.visible = true;
+                }
+            });
+        },
         clickContact(index) {
             this.selectedContact = index;
         },
@@ -125,7 +135,7 @@ var app = new Vue({
                 status: 'received',
             };
             this.contacts[this.selectedContact].messages.push(CPUmex);
-        }
+        },
     }
 });
 Vue.config.devtools = true;

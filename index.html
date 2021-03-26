@@ -48,13 +48,13 @@
 
                 <!-- (Sezione ricerca - sidebar) -->
                 <div class="search">
-                    <i class="fas fa-search"></i><input type="search" placeholder="Cerca o inizia una nuova chat...">
+                    <i class="fas fa-search"></i><input type="text" placeholder="Cerca o inizia una nuova chat..." v-model="search" v-on:keyup="findContact(search)">
                 </div>
 
                 <!-- (Sezione contacts - sidebar) -->
                 <div class="contacts">
                     <ul>
-                        <li tabindex="1" @click="clickContact(index)" v-for="(contact, index) in contacts">
+                        <li tabindex="1" @click="clickContact(index)" v-for="(contact, index) in contacts" v-if="contact.visible == true">
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=" ">
                             <p>{{contact.name}}</p>
                         </li>
