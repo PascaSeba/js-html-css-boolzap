@@ -305,6 +305,7 @@ main .main_body {
     border-radius: 15px;
     width: 49%;
     margin-bottom: 5px;
+    overflow-wrap: break-word;
 }
 
 .chat p span {
@@ -312,7 +313,44 @@ main .main_body {
     align-self: flex-end;
     margin-top: 3px;
     font-size: 0.7em;
+    margin-top: 10px;
 }
+
+.chat p .ms_chevron {
+    align-self: flex-end;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    display: none;
+    position: relative;
+}
+
+.chat p:hover .ms_chevron {
+    display: flex;
+}
+
+.message_nav {
+    display: flex;
+    font-size: 1.2em;
+    position: absolute;
+    right: 5%;
+    top: 8.3%;
+    background-color: #ffffff;
+    width: 10%;
+    flex-wrap: wrap;
+}
+
+.message_nav p {
+    padding: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.message_nav p:hover {
+    background-color: #cccccc;
+}
+
+
+/* SEZIONE DEL FOOTER */
 
 footer {
     background-color: #eaeaea;
@@ -331,14 +369,17 @@ footer {
     align-items: center;
 }
 
-.footer_container input {
+.footer_container textarea {
     width: 85%;
     height: 45px;
     outline: none;
-    font-size: 1em;
+    font-size: 1.2em;
+    font-family: 'Lato', sans-serif;
     border-radius: 10px;
     border: none;
-    padding-left: 10px;
+    padding: 10.5px;
+    resize: none;
+    overflow: hidden;
 }
 
 .footer_container i {

@@ -86,7 +86,11 @@
 
             <section class="main_body ">
                 <div class="chat">
-                    <p v-for="message in contacts[selectedContact].messages" :class="(message.status == 'sent') ? 'you' : 'friend'">{{message.text}} <span>{{message.date}}</span></p>
+                    <p v-for="message in contacts[selectedContact].messages" :class="(message.status == 'sent') ? 'you' : 'friend'"><i class="fas fa-chevron-down ms_chevron" @click="menuOpen = !menuOpen"></i>{{message.text}}<span>{{message.date}}</span></p>
+                    <div v-if="menuOpen" class="message_nav">
+                        <p>Message info</p>
+                        <p>Delete message</p>
+                    </div>
                 </div>
             </section>
 
@@ -95,7 +99,7 @@
         <footer>
             <div class="footer_container ">
                 <i class="far fa-smile "></i>
-                <input type="text " placeholder="Scrivi un messaggio..." v-on:keyup.13="addMessage()" v-model="myMessage">
+                <textarea placeholder="Scrivi un messaggio..." v-on:keyup.13="addMessage()" v-model="myMessage"></textarea>
                 <i class="fas fa-microphone "></i>
             </div>
         </footer>

@@ -4,6 +4,7 @@ var app = new Vue({
         selectedContact: 0,
         myMessage: (""),
         search: (""),
+        menuOpen: false,
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',
@@ -101,10 +102,10 @@ var app = new Vue({
     methods: {
         findContact(search) {
             this.contacts.forEach((contact) => {
-                if (!contact.name.toLowerCase().includes(search.toLowerCase())) {
-                    contact.visible = false;
-                } else {
+                if (contact.name.toLowerCase().includes(search.toLowerCase())) {
                     contact.visible = true;
+                } else {
+                    contact.visible = false;
                 }
             });
         },
@@ -136,6 +137,9 @@ var app = new Vue({
             };
             this.contacts[this.selectedContact].messages.push(CPUmex);
         },
+        /* deleteMex() {
+
+        } */
     }
 });
 Vue.config.devtools = true;
