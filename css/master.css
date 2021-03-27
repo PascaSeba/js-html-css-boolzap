@@ -189,9 +189,14 @@ i:hover {
     margin-left: 5px;
 }
 
+.contacts li p span {
+    color: grey;
+    font-size: 0.90em;
+}
+
 .contacts li:hover {
     background-color: #e9ebeb;
-    font-size: 1.3em;
+    font-size: 1.2em;
     align-items: center;
     font-weight: bold;
 }
@@ -205,9 +210,17 @@ i:hover {
 .contacts li:focus {
     background-color: #dadada;
     outline: none;
-    font-size: 1.3em;
+    font-size: 1.2em;
     align-items: center;
     font-weight: bold;
+}
+
+.contacts li:hover p span {
+    font-size: 0.77em;
+}
+
+.contacts li:focus p span {
+    font-size: 0.77em;
 }
 
 

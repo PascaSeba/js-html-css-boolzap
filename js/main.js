@@ -115,7 +115,7 @@ var app = new Vue({
         addMessage() {
             if (this.myMessage != "") {
                 var mex = {
-                    date: "prova",
+                    date: dayjs().format('DD MM YYYY H:mm'),
                     text: this.myMessage,
                     status: 'sent'
                 };
@@ -131,7 +131,7 @@ var app = new Vue({
         },
         CPUreply() {
             var CPUmex = {
-                date: "prova",
+                date: dayjs().format('DD MM YYYY H:mm'),
                 text: 'Ok',
                 status: 'received',
             };
